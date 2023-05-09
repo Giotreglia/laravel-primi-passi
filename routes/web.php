@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+
+    $welcome = "Daje de Laravel!";
+    $gif = "https://media.tenor.com/zalfBQMfhGgAAAAC/daje-che-bello.gif";
+
+    $data = [
+        'welcome' => $welcome,
+        'gif' => $gif
+    ];    
+    return view('home', $data);
 });
