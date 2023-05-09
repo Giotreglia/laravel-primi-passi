@@ -23,4 +23,20 @@ Route::get('/', function () {
         'gif' => $gif
     ];    
     return view('home', $data);
-});
+})->name('home');
+
+Route::get('myTeam', function () {
+    $myTeam = "FC Internazionale";
+    $img = "https://open.http.mp.streamamg.com/p/3001560/sp/300156000/thumbnail/entry_id/0_zicj5xgg/width/554";
+
+    $myTeamData = [
+        'myTeam' => $myTeam,
+        'img' => $img
+    ];
+    return view('myTeam', $myTeamData);
+})->name('myTeam');
+
+Route::get('myCalendar', function () {
+
+    return view('myCalendar', ['myMessage'=> "Mi raccomando domani piano con gli esercizi che c'è IL derby!", 'grazie'=>"GRAZIE!!!"]);
+})->name('myCalendar');
